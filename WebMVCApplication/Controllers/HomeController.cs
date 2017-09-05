@@ -11,6 +11,7 @@ namespace WebMVCApplication.Controllers
         // GET: Home
         public ActionResult Index()
         {
+            //test commit
             ViewBag.Welcome = "Hello!";
             return View();
         }
