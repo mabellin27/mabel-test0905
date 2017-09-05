@@ -1,0 +1,51 @@
+﻿@model WebMVCApplication.Models.LoginViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LoginLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("Login", "Login", FormMethod.Post))
+{
+    <div class="container form-container">
+        <h4>Please Login First.</h4>
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group row">
+                @Html.LabelFor(m => m.UserName, new { @class="control-label col-sm-3", style="text-align: center"})
+            <div class="col-sm-9">
+                @Html.TextBoxFor(m => m.UserName, new { @require = "true", id = "username", placeholder = "Account" })
+                @Html.ValidationMessageFor(model => model.UserName, "", new { @class="text-danger"})
+            </div>
+        </div>
+        <div class="form-group row">
+                @Html.LabelFor(m => m.Password, new { @class= "control-label col-sm-3", style= "text-align: center" })
+            <div class="col-sm-9">
+                @Html.PasswordFor(m => m.Password, new { @require = "true", id = "psw", placeholder = "Password" })
+                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <div class="checkbox">
+                    <label><input type="checkbox" name="remember"> Remember me</label>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-12">
+                <button type="submit" class="btn btn-default">Submit</button>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="clearbtn">Clear</button>
+        <span class="link">
+            Forgot @Html.ActionLink("password?", "ResetPassword")
+        </span>
+        
+        @ViewBag.Show
+    </div>
+}
+    
+

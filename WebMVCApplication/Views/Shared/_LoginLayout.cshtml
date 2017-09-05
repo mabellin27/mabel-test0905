@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!--Bootstrp4-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>    <!--jQuery-->
+        <title>@Page.Title</title>
+        @RenderSection("head", required: false)
+        
+        <style>
+            button {
+                background-color: #4CAF50;
+                color: white;
+                padding: 14px 20px;
+                margin: 8px 0;
+                border: none;
+                cursor: pointer;
+                width: 100%;
+            }
+            button:hover {
+                opacity: 0.8;
+            }
+            .clearbtn {
+                width: auto;
+                padding: 10px 18px;
+                background-color: #f44336;
+            }
+            .container {
+                padding: 16px;
+                width: 100%;
+            }
+
+            span.link {
+                float: right;
+                padding-top: 16px;
+            }
+
+            .form-group {
+                padding-top: 5px;
+            }
+
+            .form-container {
+                padding: 16px;
+                border: 3px solid #f1f1f1;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <h2>Welcome</h2>
+                @RenderBody()
+            </div>
+            <div class="col-3"></div>
+        </div>
+        <script>
+            $('.clearbtn').click(function () {
+                $('#username').val('');
+                $('#psw').val('');
+                $("input[name='remember']:checkbox").prop('checked', false);
+            })
+        </script>
+    </body>
+</html>
